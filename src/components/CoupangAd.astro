@@ -1,23 +1,21 @@
 ---
 // Coupang Partners 광고 — 글 상단 배치
-// 사용 전 .env 또는 astro.config.mjs에 PUBLIC_COUPANG_ID 설정 필요
-const COUPANG_ID = import.meta.env.PUBLIC_COUPANG_ID || "";
-const TRACKING_CODE = import.meta.env.PUBLIC_COUPANG_TRACKING || "";
+// id=961729, trackingCode=AF8612579
 ---
-{COUPANG_ID && (
-  <div class="ad-coupang" style="margin: 2rem 0; padding: 1rem; background: var(--hover); border-radius: 8px; text-align: center;">
-    <p style="font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem;">광고 · 쿠팡 파트너스</p>
+<div class="ad-coupang" style="margin: 2rem 0; padding: 1rem; background: var(--hover, #f5f5f5); border-radius: 8px; text-align: center;">
+  <p style="font-size: 0.75rem; color: var(--muted, #888); margin-bottom: 0.5rem;">광고 · 쿠팡 파트너스</p>
+  <div style="display: flex; justify-content: center;">
     <iframe
-      src={`https://ads-partners.coupang.com/widgets.html?id=${COUPANG_ID}&template=carousel&trackingCode=${TRACKING_CODE}`}
-      width="100%"
-      height="240"
+      src="https://ads-partners.coupang.com/widgets.html?id=961729&template=carousel&trackingCode=AF8612579&subId=&width=680&height=140&tsource="
+      width="680"
+      height="140"
       frameborder="0"
       scrolling="no"
       referrerpolicy="unsafe-url"
-      style="border: none; border-radius: 4px;"
+      style="border: none; max-width: 100%;"
     />
-    <p style="font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem;">
-      이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-    </p>
   </div>
-)}
+  <p style="font-size: 0.7rem; color: var(--muted, #888); margin-top: 0.5rem;">
+    이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+  </p>
+</div>
