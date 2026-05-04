@@ -1,59 +1,39 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { CHANNELS } from "../data/channels";
+import { CHANNEL } from "../data/channel";
 
 const posts = (await getCollection("posts", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 24);
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout
-  title="Mint Soft Stories"
-  description="범죄, 역사, 지식. 영상으로 다 못 담은 이야기를 글로 풀어냅니다. 13개 채널의 다큐멘터리 + 텍스트."
->
+<BaseLayout>
   <section class="prose" style="text-align:center; padding-top: 3rem;">
+    <p style="font-size: 0.9rem; color: var(--muted);">{CHANNEL.category}</p>
     <h1 style="font-size: 2.6rem; line-height:1.2;">
-      영상으로 다 담지 못한 <br />
-      <span style="color: var(--accent);">진짜 이야기</span>
+      <span style="color: var(--accent);">{CHANNEL.name}</span>
     </h1>
-    <p style="color: var(--muted); font-size: 1.1rem; margin-top: 1rem;">
-      범죄·역사·심리·경제·미스터리. 13개 채널의 깊이 있는 글.
-    </p>
+    <p style="color: var(--muted); font-size: 1.15rem; margin-top: 1rem;">{CHANNEL.tagline}</p>
   </section>
-
-  <section style="margin: 3rem auto; max-width: var(--max-width-wide); padding: 0 1.25rem;">
-    <h2 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.25rem;">채널 둘러보기</h2>
-    <div class="grid" style="margin: 0;">
-      {Object.values(CHANNELS).map((c) => (
-        <a href={`/${c.id}/`} class="card" data-channel={c.id} style={`background: ${c.tokens.bg}; color: ${c.tokens.fg}; border-color: ${c.tokens.accent}40;`}>
-          <div style={`font-size: 2rem; margin-bottom: 0.5rem;`}>{c.emoji}</div>
-          <h3 style={`color: ${c.tokens.fg}; margin-bottom: 0.5rem;`}>{c.name}</h3>
-          <p style={`color: ${c.tokens.muted}; font-size: 0.9rem;`}>{c.tagline}</p>
-          <p style={`color: ${c.tokens.accent}; font-size: 0.8rem; margin-top: 0.75rem;`}>{c.category} →</p>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  {posts.length > 0 && (
-    <section style="margin: 4rem auto; max-width: var(--max-width-wide); padding: 0 1.25rem;">
-      <h2 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.25rem;">최신 글</h2>
-      <div class="grid" style="margin: 0;">
-        {posts.map((p) => {
-          const ch = CHANNELS[p.data.channel];
-          return (
-            <a href={`/${p.data.channel}/${p.slug}/`} class="card">
-              <p class="meta" style={`color: ${ch?.tokens.accent}`}>
-                {ch?.emoji} {ch?.name}
-              </p>
-              <h3>{p.data.title}</h3>
-              <p class="meta">
-                {p.data.pubDate.toLocaleDateString("ko-KR")}
-              </p>
-            </a>
-          );
-        })}
-      </div>
-    </section>
-  )}
+  <div class="grid">
+    {posts.length === 0 && (
+      <p style="color: var(--muted); padding: 2rem; text-align: center; grid-column: 1 / -1;">
+        곧 첫 글이 발행됩니다.
+      </p>
+    )}
+    {posts.map((p) => (
+      <a href={`/${p.slug}/`} class="card">
+        {p.data.heroImage && (
+          <img src={p.data.heroImage} alt={p.data.title} style="width: 100%; border-radius: 8px; margin-bottom: 0.75rem; aspect-ratio: 16/9; object-fit: cover;" />
+        )}
+        <h3>{p.data.title}</h3>
+        <p class="meta">
+          {p.data.pubDate.toLocaleDateString("ko-KR")}
+          {p.data.tags.length > 0 && ` · ${p.data.tags.slice(0, 3).map((t) => `#${t}`).join(" ")}`}
+        </p>
+        <p style="margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6;">
+          {p.data.description}
+        </p>
+      </a>
+    ))}
+  </div>
 </BaseLayout>

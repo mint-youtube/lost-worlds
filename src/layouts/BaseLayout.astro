@@ -1,24 +1,20 @@
 ---
 import "../styles/global.css";
-import { CHANNELS, getChannel } from "../data/channels";
+import { CHANNEL } from "../data/channel";
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
-  channel?: string;
   ogImage?: string;
   pubDate?: Date;
 }
 
-const { title, description = "", channel, ogImage, pubDate } = Astro.props;
-const ch = channel ? getChannel(channel) : undefined;
-const dataChannelAttr = ch?.id ?? "";
-const siteName = "Mint Soft Stories";
-const fullTitle = ch ? `${title} | ${ch.name}` : `${title} | ${siteName}`;
+const { title, description = CHANNEL.tagline, ogImage, pubDate } = Astro.props;
+const fullTitle = title ? `${title} | ${CHANNEL.name}` : CHANNEL.name;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
-<html lang="ko" data-channel={dataChannelAttr}>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,24 +28,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   {ogImage && <meta property="og:image" content={ogImage} />}
   {pubDate && <meta property="article:published_time" content={pubDate.toISOString()} />}
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title={CHANNEL.name} href="/rss.xml" />
   <link rel="sitemap" href="/sitemap-index.xml" />
 </head>
 <body>
   <header class="site-header">
-    <nav style="display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap;">
-      <a href="/" style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700;">
-        Mint Soft Stories
+    <nav style="display:flex; gap:1.5rem; align-items:center; justify-content: space-between; flex-wrap: wrap;">
+      <a href="/" class="brand">
+        <span style="font-size: 1.6rem;">{CHANNEL.emoji}</span>
+        <span>{CHANNEL.name}</span>
       </a>
-      <span style="color: var(--muted); font-size: 0.85rem;">·</span>
-      {Object.values(CHANNELS).map((c) => (
-        <a
-          href={`/${c.id}/`}
-          style={`font-size: 0.85rem; color: ${ch?.id === c.id ? c.tokens.accent : "var(--muted)"}; font-weight: ${ch?.id === c.id ? "700" : "400"};`}
-        >
-          {c.emoji} {c.name}
-        </a>
-      ))}
+      <div style="display:flex; gap:1.5rem;">
+        <a href="/" style="color: var(--muted); font-size: 0.9rem;">홈</a>
+        <a href="/tags/" style="color: var(--muted); font-size: 0.9rem;">태그</a>
+        <a href="/about/" style="color: var(--muted); font-size: 0.9rem;">소개</a>
+      </div>
     </nav>
   </header>
   <main>
@@ -57,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </main>
   <footer class="site-footer">
     <div style="max-width: var(--max-width); margin: 0 auto;">
-      © {new Date().getFullYear()} Mint Soft Stories ·
+      © {new Date().getFullYear()} {CHANNEL.name} ·
       <a href="/rss.xml">RSS</a> ·
       <a href="/sitemap-index.xml">Sitemap</a>
     </div>

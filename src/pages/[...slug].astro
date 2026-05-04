@@ -1,12 +1,11 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import PostLayout from "../../layouts/PostLayout.astro";
-import { CHANNEL_IDS } from "../../data/channels";
+import PostLayout from "../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts.map((p) => ({
-    params: { channel: p.data.channel, slug: p.slug },
+    params: { slug: p.slug },
     props: { post: p },
   }));
 }
@@ -21,7 +20,6 @@ const { Content } = await post.render();
 <PostLayout
   title={post.data.title}
   description={post.data.description}
-  channel={post.data.channel}
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
   tags={post.data.tags}

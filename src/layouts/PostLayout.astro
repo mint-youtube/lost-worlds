@@ -2,12 +2,10 @@
 import BaseLayout from "./BaseLayout.astro";
 import CoupangAd from "../components/CoupangAd.astro";
 import AliExpressAd from "../components/AliExpressAd.astro";
-import { getChannel } from "../data/channels";
 
 interface Props {
   title: string;
   description: string;
-  channel: string;
   pubDate: Date;
   updatedDate?: Date;
   tags?: string[];
@@ -15,17 +13,11 @@ interface Props {
   heroImage?: string;
 }
 
-const { title, description, channel, pubDate, updatedDate, tags = [], youtubeUrl, heroImage } = Astro.props;
-const ch = getChannel(channel);
+const { title, description, pubDate, updatedDate, tags = [], youtubeUrl, heroImage } = Astro.props;
 ---
-<BaseLayout title={title} description={description} channel={channel} ogImage={heroImage} pubDate={pubDate}>
+<BaseLayout title={title} description={description} ogImage={heroImage} pubDate={pubDate}>
   <article class="prose">
-    <div style="margin-top: 2.5rem;">
-      <a href={`/${channel}/`} style="font-size: 0.875rem; color: var(--accent); font-weight: 600;">
-        {ch?.emoji} {ch?.name}
-      </a>
-    </div>
-    <h1>{title}</h1>
+    <h1 style="margin-top: 2.5rem;">{title}</h1>
     <p style="color: var(--muted); font-size: 0.95rem; margin-top: 1rem;">
       <time datetime={pubDate.toISOString()}>
         {pubDate.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" })}
@@ -37,9 +29,9 @@ const ch = getChannel(channel);
     {tags.length > 0 && (
       <p style="margin-top: 0.5rem;">
         {tags.map((t) => (
-          <span style="font-size: 0.85rem; background: var(--hover); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.4rem; color: var(--muted);">
+          <a href={`/tags/${t}/`} style="font-size: 0.85rem; background: var(--hover); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.4rem; color: var(--muted);">
             #{t}
-          </span>
+          </a>
         ))}
       </p>
     )}
