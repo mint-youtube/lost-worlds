@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { CHANNEL_IDS, getChannel } from "../../data/channels";
+
+export async function getStaticPaths() {
+  return CHANNEL_IDS.map((id) => ({ params: { channel: id } }));
+}
+
+const { channel } = Astro.params;
+const ch = getChannel(channel as string);
+if (!ch) throw new Error(`Unknown channel: ${channel}`);
+
+const posts = (
+  await getCollection("posts", ({ data }) => !data.draft && data.channel === channel)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title={ch.name} description={ch.tagline} channel={ch.id}>
+  <section class="prose" style="padding-top: 3rem;">
+    <p style="font-size: 0.9rem; color: var(--muted);">{ch.category}</p>
+    <h1 style="font-size: 2.5rem;">
+      <span style="font-size: 2rem;">{ch.emoji}</span> {ch.name}
+    </h1>
+    <p style="color: var(--muted); font-size: 1.1rem;">{ch.tagline}</p>
+  </section>
+  <div class="grid">
+    {posts.length === 0 && (
+      <p style="color: var(--muted); padding: 2rem; text-align: center;">
+        아직 발행된 글이 없습니다.
+      </p>
+    )}
+    {posts.map((p) => (
+      <a href={`/${p.data.channel}/${p.slug}/`} class="card">
+        <h3>{p.data.title}</h3>
+        <p class="meta">
+          {p.data.pubDate.toLocaleDateString("ko-KR")}
+          {p.data.tags.length > 0 && ` · ${p.data.tags.slice(0, 3).map((t: string) => `#${t}`).join(" ")}`}
+        </p>
+        <p style="margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem;">
+          {p.data.description}
+        </p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
