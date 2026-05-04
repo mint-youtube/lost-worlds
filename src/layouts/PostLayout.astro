@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import CoupangAd from "../components/CoupangAd.astro";
+import AliExpressAd from "../components/AliExpressAd.astro";
 import { getChannel } from "../data/channels";
 
 interface Props {
@@ -45,7 +47,9 @@ const ch = getChannel(channel);
       <img src={heroImage} alt={title} style="width: 100%; border-radius: 12px; margin-top: 1.5rem;" />
     )}
     <div style="margin-top: 2rem;">
+      <CoupangAd />
       <slot />
+      <AliExpressAd />
     </div>
     {youtubeUrl && (
       <div style="margin-top: 3rem; padding: 1.5rem; background: var(--hover); border-radius: 12px; border-left: 4px solid var(--accent);">

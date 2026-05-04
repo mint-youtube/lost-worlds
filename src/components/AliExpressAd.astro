@@ -1,0 +1,26 @@
+---
+// AliExpress Affiliate 광고 — 글 하단 배치
+// 사용 전 .env 또는 astro.config.mjs에 PUBLIC_ALIEXPRESS_ID 설정 필요
+const ALI_TRACKING_ID = import.meta.env.PUBLIC_ALIEXPRESS_ID || "";
+const ALI_BANNER_HTML = import.meta.env.PUBLIC_ALIEXPRESS_BANNER || "";
+---
+{(ALI_TRACKING_ID || ALI_BANNER_HTML) && (
+  <div class="ad-aliexpress" style="margin: 3rem 0 1rem; padding: 1.2rem; background: var(--hover); border-radius: 8px;">
+    <p style="font-size: 0.75rem; color: var(--muted); margin-bottom: 0.7rem; text-align: center;">광고 · AliExpress</p>
+    {ALI_BANNER_HTML ? (
+      <div set:html={ALI_BANNER_HTML} />
+    ) : (
+      <a
+        href={`https://s.click.aliexpress.com/e/${ALI_TRACKING_ID}`}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        style="display: block; padding: 1rem; background: linear-gradient(135deg, #ff4747 0%, #ff7a00 100%); color: white; text-align: center; border-radius: 8px; font-weight: 600; text-decoration: none;"
+      >
+        🛒 AliExpress 추천 상품 보러가기
+      </a>
+    )}
+    <p style="font-size: 0.7rem; color: var(--muted); margin-top: 0.7rem; text-align: center;">
+      이 링크를 통해 구매 시 일정액의 수수료를 제공받습니다.
+    </p>
+  </div>
+)}
