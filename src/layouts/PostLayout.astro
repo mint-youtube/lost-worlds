@@ -14,42 +14,33 @@ interface Props {
 }
 
 const { title, description, pubDate, updatedDate, tags = [], youtubeUrl, heroImage } = Astro.props;
+const formattedDate = pubDate.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
 ---
 <BaseLayout title={title} description={description} ogImage={heroImage} pubDate={pubDate}>
-  <article class="prose">
-    <h1 style="margin-top: 2.5rem;">{title}</h1>
-    <p style="color: var(--muted); font-size: 0.95rem; margin-top: 1rem;">
-      <time datetime={pubDate.toISOString()}>
-        {pubDate.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" })}
-      </time>
-      {updatedDate && (
-        <span> · 수정 {updatedDate.toLocaleDateString("ko-KR")}</span>
-      )}
+  <article class="prose post-article">
+    <h1 class="post-title">{title}</h1>
+    <p class="post-meta">
+      <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+      {updatedDate && (<span> · 수정 {updatedDate.toLocaleDateString("ko-KR")}</span>)}
     </p>
     {tags.length > 0 && (
-      <p style="margin-top: 0.5rem;">
+      <p class="post-tags">
         {tags.map((t) => (
-          <a href={`/tags/${t}/`} style="font-size: 0.85rem; background: var(--hover); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.4rem; color: var(--muted);">
-            #{t}
-          </a>
+          <a href={`/tags/${t}/`} class="tag-chip">#{t}</a>
         ))}
       </p>
     )}
-    {heroImage && (
-      <img src={heroImage} alt={title} style="width: 100%; border-radius: 12px; margin-top: 1.5rem;" />
-    )}
-    <div style="margin-top: 2rem;">
-      <CoupangAd />
-      <slot />
-      <AliExpressAd />
-    </div>
+    {heroImage && (<img class="post-hero" src={heroImage} alt={title} />)}
+    <div class="ad-coupang"><CoupangAd /></div>
+    <div class="post-body"><slot /></div>
+    <div class="ad-aliexpress"><AliExpressAd /></div>
     {youtubeUrl && (
-      <div style="margin-top: 3rem; padding: 1.5rem; background: var(--hover); border-radius: 12px; border-left: 4px solid var(--accent);">
-        <p style="margin: 0; font-weight: 600;">📺 영상으로 보기</p>
-        <a href={youtubeUrl} target="_blank" rel="noopener" style="font-size: 1.1rem;">
-          {youtubeUrl}
-        </a>
+      <div class="youtube-cta">
+        <p>📺 영상으로 보기</p>
+        <a href={youtubeUrl} target="_blank" rel="noopener">{youtubeUrl}</a>
       </div>
     )}
   </article>
 </BaseLayout>
+
+

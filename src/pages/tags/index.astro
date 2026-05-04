@@ -1,26 +1,46 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-const posts = await getCollection("posts", ({ data }) => !data.draft);
-const tagCounts = new Map<string, number>();
+const posts = await getCollection("posts");
+const tagMap = new Map<string, number>();
 for (const p of posts) {
-  for (const t of p.data.tags) {
-    tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+  for (const t of p.data.tags || []) {
+    tagMap.set(t, (tagMap.get(t) || 0) + 1);
   }
 }
-const tags = Array.from(tagCounts.entries()).sort((a, b) => b[1] - a[1]);
+const tags = [...tagMap.entries()].sort((a, b) => b[1] - a[1]);
 ---
 <BaseLayout title="태그">
-  <section class="prose" style="padding-top: 3rem;">
-    <h1>태그</h1>
-    <p style="color: var(--muted);">관심 있는 주제로 글을 모아 보세요.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;">
-      {tags.map(([tag, count]) => (
-        <a href={`/tags/${tag}/`} style="background: var(--hover); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border);">
-          #{tag} <span style="color: var(--muted); font-size: 0.85rem;">({count})</span>
+  <section class="prose tags-index">
+    <h1>모든 태그</h1>
+    {tags.length === 0 && <p>태그가 아직 없습니다.</p>}
+    <div class="tag-cloud">
+      {tags.map(([t, n]) => (
+        <a href={`/tags/${t}/`} class="tag-chip-large">
+          #{t} <span class="count">{n}</span>
         </a>
       ))}
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.tags-index { padding: 2rem 1.25rem; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.tag-chip-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg);
+  font-family: var(--font-heading);
+}
+.tag-chip-large:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); text-decoration: none; }
+.tag-chip-large .count { font-size: 0.85rem; color: var(--muted); }
+.tag-chip-large:hover .count { color: var(--bg); opacity: 0.7; }
+
+</style>

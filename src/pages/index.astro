@@ -1,39 +1,32 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { CHANNEL } from "../data/channel";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection("posts", ({ data }) => !data.draft))
+const posts = (await getCollection("posts"))
+  .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <BaseLayout>
-  <section class="prose" style="text-align:center; padding-top: 3rem;">
-    <p style="font-size: 0.9rem; color: var(--muted);">{CHANNEL.category}</p>
-    <h1 style="font-size: 2.6rem; line-height:1.2;">
-      <span style="color: var(--accent);">{CHANNEL.name}</span>
-    </h1>
-    <p style="color: var(--muted); font-size: 1.15rem; margin-top: 1rem;">{CHANNEL.tagline}</p>
+  <section class="home-hero">
+    <div class="home-emoji">{CHANNEL.emoji}</div>
+    <h1 class="home-title">{CHANNEL.name}</h1>
+    <p class="home-tagline">{CHANNEL.tagline}</p>
   </section>
-  <div class="grid">
-    {posts.length === 0 && (
-      <p style="color: var(--muted); padding: 2rem; text-align: center; grid-column: 1 / -1;">
-        곧 첫 글이 발행됩니다.
-      </p>
-    )}
-    {posts.map((p) => (
-      <a href={`/${p.slug}/`} class="card">
-        {p.data.heroImage && (
-          <img src={p.data.heroImage} alt={p.data.title} style="width: 100%; border-radius: 8px; margin-bottom: 0.75rem; aspect-ratio: 16/9; object-fit: cover;" />
-        )}
-        <h3>{p.data.title}</h3>
-        <p class="meta">
-          {p.data.pubDate.toLocaleDateString("ko-KR")}
-          {p.data.tags.length > 0 && ` · ${p.data.tags.slice(0, 3).map((t) => `#${t}`).join(" ")}`}
-        </p>
-        <p style="margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6;">
-          {p.data.description}
-        </p>
-      </a>
-    ))}
-  </div>
+
+  <section class="home-posts">
+    {posts.length === 0 && <p class="home-empty">아직 글이 없습니다.</p>}
+    <div class="grid">
+      {posts.map((p) => (
+        <a href={`/${p.slug}/`} class="card">
+          <h3>{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          <p class="meta">
+            <time>{p.data.pubDate.toLocaleDateString("ko-KR")}</time>
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
 </BaseLayout>
+

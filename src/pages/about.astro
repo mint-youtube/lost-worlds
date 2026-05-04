@@ -3,15 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { CHANNEL } from "../data/channel";
 ---
 <BaseLayout title="소개">
-  <article class="prose" style="padding-top: 3rem;">
+  <article class="prose about-page">
     <h1>{CHANNEL.emoji} {CHANNEL.name}</h1>
-    <p style="color: var(--muted); font-size: 1.15rem;">{CHANNEL.tagline}</p>
+    <p class="about-tagline">{CHANNEL.tagline}</p>
+
     <h2>이 블로그는</h2>
     <p>
-      유튜브 채널 <strong>인터폴 추적</strong>의 영상에서 다 담지 못한
-      추가 자료, 깊이 있는 분석, 사건의 비하인드를 글로 풀어냅니다.
+      {CHANNEL.name}의 영상 콘텐츠를 텍스트로 다시 풀어내는 공간입니다.
+      유튜브에서 다루지 못한 배경, 추가 분석, 후속 사건까지 깊이 있게 담습니다.
     </p>
-    <h2>컨셉</h2>
-    <p>다크 첩보 + 여권 스탬프 + 세계지도 그리드</p>
+
+    <h2>업데이트</h2>
+    <p>매일 새 글이 올라옵니다. RSS 또는 유튜브 채널 구독으로 새 글 알림을 받으세요.</p>
   </article>
 </BaseLayout>
+

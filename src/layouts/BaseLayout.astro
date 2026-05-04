@@ -30,29 +30,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" type="application/rss+xml" title={CHANNEL.name} href="/rss.xml" />
   <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Courier+Prime&display=swap">
+  
 </head>
 <body>
   <header class="site-header">
-    <nav style="display:flex; gap:1.5rem; align-items:center; justify-content: space-between; flex-wrap: wrap;">
-      <a href="/" class="brand">
-        <span style="font-size: 1.6rem;">{CHANNEL.emoji}</span>
-        <span>{CHANNEL.name}</span>
-      </a>
-      <div style="display:flex; gap:1.5rem;">
-        <a href="/" style="color: var(--muted); font-size: 0.9rem;">홈</a>
-        <a href="/tags/" style="color: var(--muted); font-size: 0.9rem;">태그</a>
-        <a href="/about/" style="color: var(--muted); font-size: 0.9rem;">소개</a>
-      </div>
+    <div style="max-width: var(--max-width-wide); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <a href="/" class="brand">{CHANNEL.name}</a>
+      <span class="coordinates">N 36° 30' · E 127° 45'</span>
+    </div>
+    <nav class="nav" style="max-width: var(--max-width-wide); margin: 0.6rem auto 0;">
+      <a href="/">홈</a><a href="/tags/">탐사기록</a><a href="/about/">소개</a>
     </nav>
   </header>
   <main>
     <slot />
   </main>
   <footer class="site-footer">
-    <div style="max-width: var(--max-width); margin: 0 auto;">
-      © {new Date().getFullYear()} {CHANNEL.name} ·
-      <a href="/rss.xml">RSS</a> ·
-      <a href="/sitemap-index.xml">Sitemap</a>
+    <div style="max-width: var(--max-width-wide); margin: 0 auto; text-align: center; font-family: var(--font-heading);">
+      🗺 © {new Date().getFullYear()} {CHANNEL.name} — Field Notes · <a href="/rss.xml">RSS</a> · <a href="/sitemap-index.xml">Sitemap</a>
     </div>
   </footer>
 </body>
