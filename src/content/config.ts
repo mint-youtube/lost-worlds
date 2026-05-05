@@ -8,7 +8,7 @@ const posts = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
-    youtubeUrl: z.string().url().optional(),
+    youtubeUrl: z.union([z.string().url(), z.literal("")]).optional(),
     youtubeId: z.string().optional(),
     heroImage: z.string().optional(),
     draft: z.boolean().default(false),
