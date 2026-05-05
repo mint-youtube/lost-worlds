@@ -76,14 +76,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav a { color: var(--muted); font-size: 0.9rem; }
 .nav a:hover { color: var(--accent); }
 
-.ad-coupang, .ad-aliexpress {
-  margin: 2rem 0;
-  padding: 0.5rem;
-  background: var(--bg-secondary);
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  text-align: center;
-}
+/* 광고 컴포넌트(.ad-coupang, .ad-aliexpress)는 컴포넌트 내부에서 자체 스타일 적용 — 외부 wrapper 박스 추가 X */
 
 .youtube-cta {
   margin: 3rem 0;

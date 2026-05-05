@@ -31,9 +31,9 @@ const formattedDate = pubDate.toLocaleDateString("ko-KR", { year: "numeric", mon
       </p>
     )}
     {heroImage && (<img class="post-hero" src={heroImage} alt={title} />)}
-    <div class="ad-coupang"><CoupangAd /></div>
+    <CoupangAd />
     <div class="post-body"><slot /></div>
-    <div class="ad-aliexpress"><AliExpressAd /></div>
+    <AliExpressAd />
     {youtubeUrl && (
       <div class="youtube-cta">
         <p>📺 영상으로 보기</p>
