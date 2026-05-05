@@ -11,36 +11,18 @@ for (const p of posts) {
 }
 const tags = [...tagMap.entries()].sort((a, b) => b[1] - a[1]);
 ---
-<BaseLayout title="태그">
-  <section class="prose tags-index">
-    <h1>모든 태그</h1>
-    {tags.length === 0 && <p>태그가 아직 없습니다.</p>}
-    <div class="tag-cloud">
+<BaseLayout title="모든 태그">
+  <section class="max-w-prose mx-auto px-5 py-12">
+    <h1 class="font-heading text-3xl mb-2">모든 태그</h1>
+    <p class="text-muted mb-8">{tags.length}개 태그</p>
+    {tags.length === 0 && <p class="text-muted">태그가 아직 없습니다.</p>}
+    <div class="flex flex-wrap gap-3">
       {tags.map(([t, n]) => (
-        <a href={`/tags/${t}/`} class="tag-chip-large">
-          #{t} <span class="count">{n}</span>
+        <a href={`/tags/${t}/`} class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-hover border border-border text-fg font-heading no-underline transition hover:bg-accent hover:text-bg hover:border-accent">
+          <span>#{t}</span>
+          <span class="text-xs opacity-70">{n}</span>
         </a>
       ))}
     </div>
   </section>
 </BaseLayout>
-
-<style>
-.tags-index { padding: 2rem 1.25rem; }
-.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-.tag-chip-large {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: var(--hover);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--fg);
-  font-family: var(--font-heading);
-}
-.tag-chip-large:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); text-decoration: none; }
-.tag-chip-large .count { font-size: 0.85rem; color: var(--muted); }
-.tag-chip-large:hover .count { color: var(--bg); opacity: 0.7; }
-
-</style>

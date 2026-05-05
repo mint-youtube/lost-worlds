@@ -1,23 +1,19 @@
 {
-  "name": "youtube-blog",
-  "type": "module",
+  "name": "blog-lost-worlds",
   "version": "1.0.0",
-  "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.3",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.1.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.2",
-    "typescript": "^5.7.2"
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/tailwind": "^6.0.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^5.0.0",
+    "tailwindcss": "^3.4.17"
   }
 }

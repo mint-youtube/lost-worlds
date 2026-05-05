@@ -1,233 +1,36 @@
-:root {
-  --bg: #1B1812;
-  --bg-secondary: #251F16;
-  --fg: #E8DCC0;
-  --muted: #A89878;
-  --accent: #C8A458;
-  --accent2: #967A38;
-  --border: #3A3022;
-  --hover: #241E16;
-  --font-heading: 'Nanum Myeongjo', serif;
-  --font-body: 'Nanum Myeongjo', serif;
-  --font-mono: 'Courier Prime', monospace;
-  --max-width: 720px;
-  --max-width-wide: 1100px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #1B1812;
+    --bg-secondary: #251F16;
+    --fg: #E8DCC0;
+    --muted: #A89878;
+    --accent: #C8A458;
+    --accent2: #967A38;
+    --border: #3A3022;
+    --hover: #241E16;
+    --font-heading: 'Nanum Myeongjo', serif;
+    --font-body: 'Nanum Myeongjo', serif;
+    --font-mono: 'Courier Prime', monospace;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; transition: color .2s ease, opacity .2s ease; }
+  a:hover { color: var(--accent2); opacity: 0.9; }
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.85;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
-a:hover { color: var(--accent2); text-decoration: underline; }
+/* 광고 컴포넌트(.ad-coupang/.ad-aliexpress)는 컴포넌트 내부 인라인 스타일 사용 — 외부 wrapper 추가 X */
 
-img { max-width: 100%; height: auto; display: block; }
 
-.prose {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.3;
-}
-.prose h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin: 2.5rem 0 1rem; }
-.prose h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin: 2.5rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
-.prose h3 { font-size: 1.25rem; margin: 2rem 0 0.5rem; }
-.prose p { margin: 1rem 0; }
-.prose img { border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-.prose blockquote {
-  border-left: 3px solid var(--accent);
-  padding: 0.5rem 1rem;
-  color: var(--muted);
-  margin: 1.5rem 0;
-  font-style: italic;
-}
-.prose code {
-  background: var(--hover);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-}
-.prose ul, .prose ol { margin: 1rem 0; padding-left: 1.5rem; }
-.prose li { margin: 0.4rem 0; }
+/* Layout-specific signature */
 
-.site-header, .site-footer {
-  max-width: var(--max-width-wide);
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem;
-}
-.site-header { border-bottom: 1px solid var(--border); }
-.site-footer { border-top: 1px solid var(--border); padding-top: 2rem; padding-bottom: 2rem; color: var(--muted); font-size: 0.9rem; }
-
-.brand { display: inline-flex; gap: 0.6rem; align-items: center; font-family: var(--font-heading); font-size: 1.3rem; color: var(--fg); }
-.brand:hover { text-decoration: none; }
-
-.nav { display: flex; gap: 1.5rem; align-items: center; }
-.nav a { color: var(--muted); font-size: 0.9rem; }
-.nav a:hover { color: var(--accent); }
-
-/* 광고 컴포넌트(.ad-coupang, .ad-aliexpress)는 컴포넌트 내부에서 자체 스타일 적용 — 외부 wrapper 박스 추가 X */
-
-.youtube-cta {
-  margin: 3rem 0;
-  padding: 1.5rem;
-  background: var(--hover);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-}
-.youtube-cta p { margin: 0; font-weight: 600; }
-
-.tag-chip {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  background: var(--hover);
-  color: var(--muted);
-  margin-right: 0.4rem;
-  margin-bottom: 0.4rem;
-}
-.tag-chip:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
-
-.card {
-  display: block;
-  padding: 1.5rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--fg);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-.card:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; }
-.card h3 { font-family: var(--font-heading); margin-bottom: 0.5rem; }
-.card .meta { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.25rem;
-  max-width: var(--max-width-wide);
-  margin: 2rem auto;
-  padding: 0 1.25rem;
-}
-
-@media (max-width: 640px) {
-  html, body { font-size: 16px; }
-  .nav { gap: 0.8rem; }
-  .nav a { font-size: 0.82rem; }
-}
-
-body {
-  background: var(--bg);
-  background-image:
-    radial-gradient(circle at 5% 5%, rgba(200,164,88,0.05), transparent 30%),
-    radial-gradient(circle at 95% 95%, rgba(200,164,88,0.05), transparent 30%);
-}
-
-.site-header {
-  border-bottom: 2px solid var(--accent);
-  padding: 1.5rem 1.25rem;
-  background: linear-gradient(180deg, var(--bg-secondary), var(--bg));
-  position: relative;
-}
-.site-header::before {
-  content: "⊕";
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  color: var(--accent);
-  opacity: 0.4;
-  font-size: 2rem;
-}
-.brand {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--accent);
-  font-weight: 700;
-}
-.brand::before { content: "🗺 "; }
-
-.coordinates {
-  font-family: var(--font-mono);
-  color: var(--muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-}
-
-.prose h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.1rem, 5vw, 2.9rem);
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.8rem;
-  font-weight: 800;
-}
-.prose h2 {
-  font-family: var(--font-heading);
-  color: var(--accent);
-  border-bottom: 1px dashed var(--border);
-}
 .prose h2::before { content: "▸ "; opacity: 0.7; }
-
-.post-meta {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0.5rem;
-  display: block;
-  text-align: center;
-}
-.post-meta::before { content: "FIELD ENTRY · "; color: var(--accent); }
-
-blockquote {
-  background: rgba(200,164,88,0.05);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  padding: 1rem 1.5rem;
-  font-style: italic;
-}
-blockquote::before {
-  content: "✎ ";
-  font-style: normal;
-  color: var(--accent);
-}
-
-.prose img {
-  filter: sepia(0.25) contrast(1.05);
-  border: 6px solid #2a2418;
-  padding: 4px;
-  background: #f4ecd8;
-}
-
-.home-hero {
-  text-align: center;
-  padding: 4rem 1.25rem 3rem;
-  background: radial-gradient(ellipse at center, var(--bg-secondary), var(--bg));
-}
-.home-emoji { font-size: 3rem; }
-.home-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  font-weight: 800;
-  color: var(--accent);
-  letter-spacing: 0.02em;
-}
-.home-tagline {
-  color: var(--muted);
-  font-style: italic;
-  font-family: var(--font-heading);
-  margin-top: 1rem;
-  font-size: 1.05rem;
-}
+.prose img { filter: sepia(0.25) contrast(1.05); border: 6px solid #2a2418; padding: 4px; background: #f4ecd8; }

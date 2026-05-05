@@ -35,22 +35,43 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Courier+Prime&display=swap">
   
 </head>
-<body>
-  <header class="site-header">
-    <div style="max-width: var(--max-width-wide); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-      <a href="/" class="brand">{CHANNEL.name}</a>
-      <span class="coordinates">N 36° 30' · E 127° 45'</span>
+<body class="min-h-screen flex flex-col ">
+  <header class="border-b border-border border-b-2 border-accent bg-gradient-to-b from-bg-secondary to-bg relative">
+    <div class="max-w-wide mx-auto px-5 py-5 flex items-center justify-between flex-wrap gap-3">
+      <a href="/" class="font-heading font-bold text-xl text-accent no-underline before:content-['🗺_']">{CHANNEL.name}</a>
+      <span class="font-mono text-xs tracking-wider text-muted">N 36° 30' · E 127° 45'</span>
     </div>
-    <nav class="nav" style="max-width: var(--max-width-wide); margin: 0.6rem auto 0;">
-      <a href="/">홈</a><a href="/tags/">탐사기록</a><a href="/about/">소개</a>
-    </nav>
+    <nav class="max-w-wide mx-auto px-5 pb-3 flex gap-5"><a href="/" class="text-muted text-sm hover:text-accent">홈</a><a href="/tags/" class="text-muted text-sm hover:text-accent">탐사기록</a><a href="/about/" class="text-muted text-sm hover:text-accent">소개</a></nav>
   </header>
-  <main>
+  <main class="flex-1">
     <slot />
   </main>
-  <footer class="site-footer">
-    <div style="max-width: var(--max-width-wide); margin: 0 auto; text-align: center; font-family: var(--font-heading);">
-      🗺 © {new Date().getFullYear()} {CHANNEL.name} — Field Notes · <a href="/rss.xml">RSS</a> · <a href="/sitemap-index.xml">Sitemap</a>
+  <footer class="border-t border-border mt-auto bg-bg-secondary/30">
+    <div class="max-w-wide mx-auto px-5 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div>
+          <h4 class="font-heading text-base mb-2 text-fg">{CHANNEL.name}</h4>
+          <p class="text-sm text-muted">{CHANNEL.tagline}</p>
+        </div>
+        <div>
+          <h4 class="font-heading text-sm mb-2 text-fg">탐색</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="/" class="text-muted hover:text-accent">홈</a></li>
+            <li><a href="/tags/" class="text-muted hover:text-accent">태그</a></li>
+            <li><a href="/about/" class="text-muted hover:text-accent">소개</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading text-sm mb-2 text-fg">구독</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="/rss.xml" class="text-muted hover:text-accent">RSS 피드</a></li>
+            <li><a href="/sitemap-index.xml" class="text-muted hover:text-accent">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-border pt-5 text-center text-xs text-muted">
+        © {new Date().getFullYear()} {CHANNEL.name} · All rights reserved.
+      </div>
     </div>
   </footer>
 </body>

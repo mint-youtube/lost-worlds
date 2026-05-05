@@ -3,9 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { CHANNEL } from "../data/channel";
 ---
 <BaseLayout title="소개">
-  <article class="prose about-page">
-    <h1>{CHANNEL.emoji} {CHANNEL.name}</h1>
-    <p class="about-tagline">{CHANNEL.tagline}</p>
+  <article class="prose mx-auto px-5 py-12 max-w-prose">
+    <div class="text-center mb-8">
+      <div class="text-5xl mb-3">{CHANNEL.emoji}</div>
+      <h1 class="font-heading text-3xl md:text-4xl mb-2">{CHANNEL.name}</h1>
+      <p class="text-muted italic">{CHANNEL.tagline}</p>
+    </div>
 
     <h2>이 블로그는</h2>
     <p>
@@ -15,6 +18,11 @@ import { CHANNEL } from "../data/channel";
 
     <h2>업데이트</h2>
     <p>매일 새 글이 올라옵니다. RSS 또는 유튜브 채널 구독으로 새 글 알림을 받으세요.</p>
+
+    <p class="mt-8 pt-6 border-t border-border text-sm text-muted text-center">
+      <a href="/" class="mr-3">홈으로</a>·
+      <a href="/tags/" class="mx-3">태그</a>·
+      <a href="/rss.xml" class="ml-3">RSS</a>
+    </p>
   </article>
 </BaseLayout>
-
