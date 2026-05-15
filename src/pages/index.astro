@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CoupangAd from "../components/CoupangAd.astro";
 import { CHANNEL } from "../data/channel";
 import { getCollection } from "astro:content";
 
@@ -34,5 +35,9 @@ const posts = (await getCollection("posts"))
         </a>
       ))}
     </div>
+  </section>
+
+  <section class="max-w-wide mx-auto px-5 py-8">
+    <CoupangAd />
   </section>
 </BaseLayout>
