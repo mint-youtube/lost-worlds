@@ -4,6 +4,7 @@ export const CHANNEL = {
   emoji: "🗺️",
   category: "공포/미스터리",
   tagline: "사라진 문명, 흔적만 남은 이야기",
+  youtubeUrl: "https://youtube.com/channel/UCiyv8vIBM9LP_0Ot89zuhgQ",
   layoutId: "explorer-journal",
   isLight: false,
   tokens: {
