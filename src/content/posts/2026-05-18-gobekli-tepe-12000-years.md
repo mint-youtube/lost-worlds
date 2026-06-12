@@ -5,7 +5,7 @@ pubDate: 2026-05-18T20:22:00+09:00
 author: ""
 category: ""
 tags: ["괴베클리테페", "GobekliTepe", "1만2천년", "고고학", "잃어버린세계", "1퍼센트법칙"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=wQr6GUzTBjY"
 heroImage: ""
 draft: false
 ---

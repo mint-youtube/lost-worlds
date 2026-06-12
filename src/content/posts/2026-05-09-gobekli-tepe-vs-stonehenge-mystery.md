@@ -5,7 +5,7 @@ pubDate: 2026-05-10T09:00:00+09:00
 author: ""
 category: ""
 tags: ["사하라 사막 고대 도시", "녹색 사하라", "가라만테스 문명", "NASA 레이더 발견", "사하라 지하 강", "사막 문명", "사하라 역사", "고대 문명 발견"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=5EEb57lsZDg"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-05-09-gobekli-tepe-vs-stonehenge-mystery/intro_img_2.png"
 draft: false
 ---

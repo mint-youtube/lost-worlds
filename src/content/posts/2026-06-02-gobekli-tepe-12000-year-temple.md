@@ -5,7 +5,7 @@ pubDate: 2026-06-02T09:00:00+09:00
 author: ""
 category: ""
 tags: ["괴베클리 테페", "고대 문명", "거석 신전", "인류 역사", "고고학 미스터리", "수렵 채집"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=vUZdZ2C5ldo"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-02-gobekli-tepe-12000-year-temple/scene-2_img_2.png"
 draft: false
 ---

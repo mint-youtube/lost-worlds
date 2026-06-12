@@ -5,7 +5,7 @@ pubDate: 2026-05-11T09:00:00+09:00
 author: ""
 category: ""
 tags: ["안티키테라 메커니즘", "고대 아날로그 컴퓨터", "사로스 주기", "메톤 주기", "안티키테라 발견", "아르키메데스", "고대 그리스 천문학", "기원전 컴퓨터", "난파선 발굴", "기술 단절"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=itTo6geGeNk"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-05-10-antikythera-mechanism-bronze-computer/intro_img_1.png"
 draft: false
 ---

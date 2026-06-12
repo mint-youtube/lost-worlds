@@ -5,7 +5,7 @@ pubDate: 2026-05-17T09:00:00+09:00
 author: ""
 category: ""
 tags: ["안티키테라 메커니즘", "Antikythera Mechanism", "고대 그리스 컴퓨터", "데렉 드 솔라 프라이스", "Tony Freeth", "고대 기술", "청동 톱니바퀴", "천체 계산기"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=If8FtpLdj8A"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-05-16-antikythera-mechanism-2000-year-computer/scene-2_img_2.png"
 draft: false
 ---
