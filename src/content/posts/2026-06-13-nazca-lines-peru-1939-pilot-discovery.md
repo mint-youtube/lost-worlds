@@ -5,7 +5,7 @@ pubDate: 2026-06-13T09:40:00+09:00
 author: ""
 category: ""
 tags: ["나스카라인", "나스카지상화", "페루세계유산", "나스카미스터리", "고대지상화", "마리아라이헤", "나스카문명", "페루여행"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=mODNKcL6J_o"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-13-nazca-lines-peru-1939-pilot-discovery/scene-2_img_2.png"
 draft: false
 ---
