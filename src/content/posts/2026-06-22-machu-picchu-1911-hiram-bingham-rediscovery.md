@@ -5,7 +5,7 @@ pubDate: 2026-06-22T22:14:00+09:00
 author: ""
 category: ""
 tags: ["마추픽추", "하이람빙엄", "마추픽추 발견", "잉카문명", "잃어버린 도시", "안데스", "빌카밤바", "마추픽추 역사", "잉카 유적", "페루 세계유산"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=qeWH35Xtu3I"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-22-machu-picchu-1911-hiram-bingham-rediscovery/scene-2_img_2.png"
 draft: false
 ---
