@@ -5,7 +5,7 @@ pubDate: 2026-06-23T16:34:00+09:00
 author: ""
 category: ""
 tags: ["폼페이", "베수비오화산", "고대로마", "폼페이발굴", "이탈리아역사유적", "석고캐스트", "소플리니우스", "그란데폼페이"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=bZvKZa-g6Ic"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-23-pompeii-79ad-vesuvius-buried-city/scene-2_img_2.png"
 draft: false
 ---
