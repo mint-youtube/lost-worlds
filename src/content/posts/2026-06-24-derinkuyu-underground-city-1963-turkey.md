@@ -5,7 +5,7 @@ pubDate: 2026-06-24T15:20:00+09:00
 author: ""
 category: ""
 tags: ["데린쿠유", "카파도키아 지하도시", "터키 고대유적", "지하문명", "카파도키아 여행", "데린쿠유 관광", "고대 지하도시", "카이마클리"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=8l9LxslO1Y8"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-24-derinkuyu-underground-city-1963-turkey/scene-2_img_2.png"
 draft: false
 ---
