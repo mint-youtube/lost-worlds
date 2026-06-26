@@ -5,7 +5,7 @@ pubDate: 2026-06-27T09:00:00+09:00
 author: ""
 category: ""
 tags: ["병마용", "진시황", "중국고대유적", "병마용발견", "시안여행", "세계문화유산", "고고학발굴", "진시황릉"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=8hCvuMv9ZA0"
 heroImage: ""
 draft: false
 ---
