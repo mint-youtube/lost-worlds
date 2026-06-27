@@ -5,7 +5,7 @@ pubDate: 2026-06-28T09:00:00+09:00
 author: ""
 category: ""
 tags: ["안티키테라 메커니즘", "안티키테라 난파선", "고대 컴퓨터", "고대 첨단 기술", "심해 고고학", "그리스 고대 유물", "천문 계산기", "잃어버린 문명", "자크 쿠스토", "고대 미스터리"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=fCS1CCKmd6s"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-06-28-antikythera-shipwreck-2022-new-finds-greece/scene-2_img_2.png"
 draft: false
 ---
