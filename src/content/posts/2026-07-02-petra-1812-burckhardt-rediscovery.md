@@ -5,7 +5,7 @@ pubDate: 2026-07-02T09:00:00+09:00
 author: ""
 category: ""
 tags: ["페트라", "부르크하르트", "나바테아", "요르단", "시크협곡", "알카즈네", "잃어버린도시", "1812년 페트라 재발견", "고대유적", "동방탐험"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=WOJR16pPEkY"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-02-petra-1812-burckhardt-rediscovery/scene-2_img_2.png"
 draft: false
 ---
