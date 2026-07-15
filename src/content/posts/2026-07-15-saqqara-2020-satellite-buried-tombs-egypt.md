@@ -5,7 +5,7 @@ pubDate: 2026-07-15T12:20:00+09:00
 author: ""
 category: ""
 tags: ["사카라", "이집트 고대도시", "위성고고학", "지표투과레이더", "황금마스크", "봉인된관", "고고학미스터리", "잃어버린세계"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=Mx4wqAs0d7o"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-15-saqqara-2020-satellite-buried-tombs-egypt/scene-2_img_2.png"
 draft: false
 ---
