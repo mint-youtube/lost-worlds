@@ -5,7 +5,7 @@ pubDate: 2026-07-16T11:54:00+09:00
 author: ""
 category: ""
 tags: ["로마 12면체", "로마 도데카헤드론", "고고학 미스터리", "용도 불명 유물", "잃어버린 세계", "고대 로마", "미스터리", "고대 유물", "역사 다큐", "풀리지 않은 수수께끼"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=-0aKFkYy_1M"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-16-roman-dodecahedron-unknown-purpose-mystery/scene-2_img_2.png"
 draft: false
 ---
