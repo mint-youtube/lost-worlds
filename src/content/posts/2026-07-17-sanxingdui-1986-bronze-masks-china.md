@@ -5,7 +5,7 @@ pubDate: 2026-07-17T20:49:00+09:00
 author: ""
 category: ""
 tags: ["삼성퇴", "산싱두이", "고대 촉나라", "청동 가면", "종목가면", "잃어버린 문명", "고고학 미스터리", "고대 도시"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=MMtcsB_LQo4"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-17-sanxingdui-1986-bronze-masks-china/scene-2_img_2.png"
 draft: false
 ---
