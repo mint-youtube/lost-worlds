@@ -5,7 +5,7 @@ pubDate: 2026-07-18T22:43:00+09:00
 author: ""
 category: ""
 tags: ["퍼시 포셋", "도시 Z", "아마존 잃어버린 도시", "우파노 계곡", "라이다 고고학", "고대 문명", "탐험가 실종", "잃어버린 세계"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=SU43KksvNJQ"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-18-lost-city-z-amazon-1925-fawcett-expedition/scene-2_img_2.png"
 draft: false
 ---
