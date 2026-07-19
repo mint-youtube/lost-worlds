@@ -5,7 +5,7 @@ pubDate: 2026-07-19T19:36:00+09:00
 author: ""
 category: ""
 tags: ["난마돌", "폰페이", "고대도시 미스터리", "현무암 유적", "태평양의 베네치아", "사우델레우르", "잃어버린 문명", "미크로네시아 유적"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=E9oSBi0CHa8"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-19-nan-madol-pacific-92-islands-basalt-city/scene-2_img_2.png"
 draft: false
 ---
