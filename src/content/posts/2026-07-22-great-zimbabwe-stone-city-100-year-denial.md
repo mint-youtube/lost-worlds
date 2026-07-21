@@ -5,7 +5,7 @@ pubDate: 2026-07-22T09:00:00+09:00
 author: ""
 category: ""
 tags: ["그레이트 짐바브웨", "짐바브웨", "쇼나족", "소프스톤 새", "고대 아프리카 문명", "석조 유적", "고고학", "잃어버린 세계", "식민주의 역사", "고대사 미스터리"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=Op10TRitiKc"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-22-great-zimbabwe-stone-city-100-year-denial/scene-2_img_2.png"
 draft: false
 ---
