@@ -34,6 +34,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Courier+Prime&display=swap">
   
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-306ESBSX7Y"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-306ESBSX7Y');
+  </script>
 </head>
 <body class="min-h-screen flex flex-col ">
   <header class="border-b border-border border-b-2 border-accent bg-gradient-to-b from-bg-secondary to-bg relative">
