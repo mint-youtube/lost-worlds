@@ -5,7 +5,7 @@ pubDate: 2026-07-21T09:46:00+09:00
 author: ""
 category: ""
 tags: ["모헨조다로", "인더스 문명", "고대 도시", "인더스 문자", "고고학 미스터리", "사라진 문명", "고대 하수도", "계획도시"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=SovvcLLw9Kg"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-21-mohenjo-daro-indus-4500-year-vanished-city/scene-2_img_2.png"
 draft: false
 ---
