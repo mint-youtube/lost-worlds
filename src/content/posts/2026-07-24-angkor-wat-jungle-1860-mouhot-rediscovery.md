@@ -5,7 +5,7 @@ pubDate: 2026-07-24T09:00:00+09:00
 author: ""
 category: ""
 tags: ["앙코르와트", "앙리무오", "크메르제국", "캄보디아", "잃어버린도시", "1860년 앙코르 재발견", "수르야바르만 2세", "정글 사원", "라이다 앙코르", "씨엠립"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=LBbcu-38Ggk"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-24-angkor-wat-jungle-1860-mouhot-rediscovery/scene-2_img_2.png"
 draft: false
 ---
