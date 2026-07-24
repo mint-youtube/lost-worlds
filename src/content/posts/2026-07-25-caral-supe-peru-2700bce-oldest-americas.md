@@ -5,7 +5,7 @@ pubDate: 2026-07-25T09:00:00+09:00
 author: ""
 category: ""
 tags: ["카랄", "수페계곡", "신대륙 최초 도시", "4700년 전", "루스 솔리스", "카랄 피라미드", "키푸 기원", "고대 문명", "페루 유적", "잃어버린 도시"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=z_e4j1BISOk"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-25-caral-supe-peru-2700bce-oldest-americas/scene-2_img_2.png"
 draft: false
 ---
