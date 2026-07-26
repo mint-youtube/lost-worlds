@@ -5,7 +5,7 @@ pubDate: 2026-07-26T22:34:00+09:00
 author: ""
 category: ""
 tags: ["트로이 황금", "슐리만", "프리아모스의 보물", "히사를리크 발굴", "잃어버린 세계", "고고학 미스터리", "트로이 전쟁", "약탈 문화재"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=cAo98q43faM"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-26-troy-schliemann-gold/scene-2_img_2.png"
 draft: false
 ---
