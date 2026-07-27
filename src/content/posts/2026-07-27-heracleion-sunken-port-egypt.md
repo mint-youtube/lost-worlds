@@ -5,7 +5,7 @@ pubDate: 2026-07-27T09:25:00+09:00
 author: ""
 category: ""
 tags: ["헤라클레이온", "토니스", "해저 도시", "수중 고고학", "잃어버린 세계", "고고학 미스터리", "지반 액상화", "이집트 유물"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=dmZyaoYyG04"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-27-heracleion-sunken-port-egypt/scene-2_img_2.png"
 draft: false
 ---
