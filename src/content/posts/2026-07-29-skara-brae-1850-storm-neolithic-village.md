@@ -5,7 +5,7 @@ pubDate: 2026-07-29T23:01:00+09:00
 author: ""
 category: ""
 tags: ["스카라브레", "오크니", "신석기 마을", "고대문명", "스코틀랜드 유적", "선사시대", "고고학", "잃어버린 세계", "돌 가구", "세계유산"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=EQfaawi5YTU"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-29-skara-brae-1850-storm-neolithic-village/scene-2_img_2.png"
 draft: false
 ---
