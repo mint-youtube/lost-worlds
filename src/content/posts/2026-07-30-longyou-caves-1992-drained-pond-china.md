@@ -5,7 +5,7 @@ pubDate: 2026-07-30T22:47:00+09:00
 author: ""
 category: ""
 tags: ["룽유동굴", "룽유석굴", "고대문명", "중국유적", "지하도시", "고고학", "잃어버린 세계", "미스터리 유적", "저장성", "고대기술"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=TNHMcRpZfSM"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-07-30-longyou-caves-1992-drained-pond-china/scene-2_img_2.png"
 draft: false
 ---
