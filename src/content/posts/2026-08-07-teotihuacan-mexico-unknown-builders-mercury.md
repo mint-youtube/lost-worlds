@@ -5,7 +5,7 @@ pubDate: 2026-08-07T21:13:00+09:00
 author: ""
 category: ""
 tags: ["테오티우아칸", "고대문명", "잃어버린세계", "고고학", "멕시코 피라미드", "태양의 피라미드", "액체 수은", "죽은 자의 거리", "아즈텍", "고대 도시 미스터리"]
-youtubeUrl: ""
+youtubeUrl: "https://youtube.com/watch?v=6dq34DAyhhs"
 heroImage: "https://assets.dailynote.blog/lost-worlds/2026-08-07-teotihuacan-mexico-unknown-builders-mercury/scene-2_img_2.png"
 draft: false
 ---
